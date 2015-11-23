@@ -79,7 +79,7 @@ $(document).ready(() => {
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify({ phoneNumber }),
       success(data) {
-        if (data && data.msg === 'Already added.') {
+        if (data && data.msg.indexOf('exists') !== -1) {
           setError('You\'re already on the waiting list.');
           button.addClass(styles.enabled);
         } else {
