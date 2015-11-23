@@ -252,6 +252,7 @@ input {
     position: relative;
   }
 
+
   .formContainer {
     position: relative;
     justify-content: center;
@@ -261,10 +262,21 @@ input {
     flex-direction: column;
   }
 
+  .form {
+    margin-bottom: 15px;
+    flex: 1;
+  }
+
   .roundupText {
     font-size: 4vmin;
-    margin-bottom: 2vh;
+    line-height: 1.1;
     margin-right: 5vw;
+    margin-bottom: 0;
+    flex: 1;
+    align-self: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
   }
   .roundupTextMobile {
     display: none;
@@ -340,6 +352,7 @@ input {
     font-size: 2vw;
     position: absolute;
     width: 100%;
+    bottom: 15px;
   }
 
   input, .button {
