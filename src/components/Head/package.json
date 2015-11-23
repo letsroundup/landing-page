@@ -1,0 +1,6 @@
+{
+  "name": "Head",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Head.js"
+}

@@ -1,0 +1,15 @@
+/* Global */
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+img {
+  display: block;
+}
