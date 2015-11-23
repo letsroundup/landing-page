@@ -66,12 +66,14 @@ $(document).ready(() => {
     const url = 'https://api.letsroundup.com/waitingList';
     const phoneNumber = $('#phoneNumber').val();
     $('.button').removeClass('enabled');
-
+    if (!__DEV__) {
+      ll('tagEvent', 'Submitting Form');
+    }
     $.ajax({
+      url,
       method: 'POST',
       contentType: 'application/json; charset=utf-8',
-      url,
-      data: JSON.stringify({ phoneNumber: phoneNumber }),
+      data: JSON.stringify({ phoneNumber }),
       success(data) {
         if (data && data.msg === 'Already added.') {
           setError('You\'re already on the waiting list.');
@@ -96,5 +98,5 @@ $(document).ready(() => {
     });
   });
 
-  $('#phoneNumber').keyup((ev) => validateForm());
+  $('#phoneNumber').keyup(() => validateForm());
 });
