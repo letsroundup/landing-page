@@ -79,12 +79,7 @@ $(document).ready(() => {
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify({ phoneNumber }),
       success(data) {
-        if (data && data.msg.indexOf('exists') !== -1) {
-          setError('You\'re already on the waiting list.');
-          button.addClass(styles.enabled);
-        } else {
-          setSuccess('Thanks! We\'ll text you when it\'s your turn.');
-        }
+        setSuccess('Thanks! We\'ll text you when it\'s your turn.');
       },
       error(data, status, error) {
         console.error(data);
@@ -95,6 +90,9 @@ $(document).ready(() => {
         } catch (ex) {
           console.error(ex);
           text = 'Oops, an error occured, please try again later!';
+        }
+        if (text.indexOf('exists') !== -1) {
+          text = 'You\'re already on the waiting list.';
         }
         setError(text);
         button.addClass(styles.enabled);
