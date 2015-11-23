@@ -5,8 +5,10 @@ import '../LICENSE';
 import 'README.md';
 
 import Landing from 'components/Landing';
+import Privacy from 'components/Privacy';
 
-import 'common/global.css';
+import 'common/global.scss';
+import 'common/anchor.scss';
 
 // This needs to be an es5 export of the plugin explodes
 module.exports = (locals, callback) => {
@@ -14,8 +16,8 @@ module.exports = (locals, callback) => {
   case '/':
     return callback(null, render({ Component: Landing }));
   case '/privacy':
-    return callback(null, 'hello privacy');
+    return callback(null, render({ Component: Privacy }));
   default:
-    return callback(null, 'hello default');
+    throw new Error(`path ${locals.path} cannot be rendered`);
   }
 };

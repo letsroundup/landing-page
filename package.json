@@ -1,12 +1,14 @@
 {
   "name": "roundup-landing-page",
+  "private": true,
   "version": "0.0.1",
   "description": "RoundUp Landing Page",
   "scripts": {
     "start": "npm run build-watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production webpack --progress -p --colors --display-error-details --bail",
-    "build-watch": "webpack-dev-server --content-base build --progress --colors --watch"
+    "build-watch": "webpack-dev-server --content-base build --progress --colors --watch",
+    "deploy": "bin/deploy"
   },
   "repository": {
     "type": "git",
