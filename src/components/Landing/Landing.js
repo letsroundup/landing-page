@@ -40,7 +40,7 @@ export default class Landing extends React.Component {
               <p className={styles.roundupText}>{DESCRIPTION}</p>
               <form action="#" id="form" className={styles.form} method="post">
                 <input type="tel" name="phone" id="phoneNumber" placeholder="Enter phone number" required/>
-                <button className={styles.button} type="submit">Get early access</button>
+                <button id="button" className={styles.button} type="submit">Get early access</button>
               </form>
               <div id="form-response" className={`${styles.response} ${styles.hidden}`}>
                 <p>Thanks! We'll text you when it's your turn.</p>

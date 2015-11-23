@@ -3,6 +3,8 @@ import $ from 'jquery';
 import headerSmallImg from 'images/header-small.png';
 import headerImg from 'images/header.jpg';
 
+import styles from 'components/Landing/Landing.scss';
+
 function onResize() {
   const scrollbar = window.innerWidth - $(window).width();
   const width = $('body').width() + scrollbar;
@@ -20,18 +22,19 @@ function validateForm() {
   const phoneNumber = $('#phoneNumber').val().replace(/[^0-9a-z\+]/g, '');
   const numReg = new RegExp(/^(\+?[0-9]{0,15})$/);
   let isValid = numReg.test(phoneNumber);
+  const button = $('#button');
   if (isValid) {
-    $('#form-response').addClass('hidden');
-    $('#phoneNumber').removeClass('error');
+    $('#form-response').addClass(styles.hidden);
+    $('#phoneNumber').removeClass(styles.error);
     if (phoneNumber[0] === '+' ? (phoneNumber.length >= 12) : (phoneNumber.length >= 10)) {
-      $('.button').addClass('enabled');
+      button.addClass(styles.enabled);
     } else {
       isValid = false;
-      $('.button').removeClass('enabled');
+      button.removeClass(styles.enabled);
     }
   } else {
     setError('Phone number is not valid.');
-    $('.button').removeClass('enabled');
+    button.removeClass(styles.enabled);
   }
 
   return isValid;
@@ -40,16 +43,16 @@ function validateForm() {
 function setError(error) {
   const response = $('#form-response');
   response.children('p').text(error);
-  response.removeClass('success');
-  response.removeClass('hidden');
-  $('#phoneNumber').addClass('error');
+  response.removeClass(styles.success);
+  response.removeClass(styles.hidden);
+  $('#phoneNumber').addClass(styles.error);
 }
 
 function setSuccess(success) {
   const response = $('#form-response');
   response.children('p').text(success);
-  response.addClass('success');
-  response.removeClass('hidden');
+  response.addClass(styles.success);
+  response.removeClass(styles.hidden);
   $('#phoneNumber').removeClass('error');
 }
 
@@ -65,7 +68,8 @@ $(document).ready(() => {
 
     const url = 'https://api.letsroundup.com/waitingList';
     const phoneNumber = $('#phoneNumber').val();
-    $('.button').removeClass('enabled');
+    const button = $('#button');
+    button.removeClass(styles.enabled);
     if (!__DEV__) {
       ll('tagEvent', 'Submitting Form');
     }
@@ -77,7 +81,7 @@ $(document).ready(() => {
       success(data) {
         if (data && data.msg === 'Already added.') {
           setError('You\'re already on the waiting list.');
-          $('.button').addClass('enabled');
+          button.addClass(styles.enabled);
         } else {
           setSuccess('Thanks! We\'ll text you when it\'s your turn.');
         }
@@ -93,10 +97,10 @@ $(document).ready(() => {
           text = 'Oops, an error occured, please try again later!';
         }
         setError(text);
-        $('.button').addClass('enabled');
+        button.addClass(styles.enabled);
       },
     });
   });
-
   $('#phoneNumber').keyup(() => validateForm());
+  $('#phoneNumber').change(() => validateForm());
 });

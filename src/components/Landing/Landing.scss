@@ -2,29 +2,8 @@
 @import "~common/constants.scss";
 @import "~common/retina.mixins.scss";
 
-/* Form */
-.response {
-  color: #ce4844;
-  .success {
-    color: #4bc364;
-  }
-}
-
 .hidden {
   display: none;
-}
-
-input {
-  background-color: $white;
-  border: 1px solid #979797;
-  border-radius: 3px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(0, 0, 0, 0.1);
-  font-variant: small-caps;
-
-  &:focus {
-    outline: none;
-    background-color: $white;
-  }
 }
 
 .error {
@@ -44,21 +23,44 @@ input {
   color:$white;
   font-weight: 600;
   font-variant: small-caps;
+  &.enabled {
+    outline: none;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(180deg, #598bdf 0%, #5e67d0 100%);
+
+    &:hover, &:active {
+      outline: none;
+      cursor: pointer;
+      cursor: hand;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      background-image: linear-gradient(180deg, #3273de 0%, #5057ad 100%);
+    }
+  }
 }
 
-.enabled {
-  outline: none;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  background-image: linear-gradient(180deg, #598bdf 0%, #5e67d0 100%);
+
+/* Form */
+.response {
+  color: #ce4844;
+  .success {
+    color: #4bc364;
+  }
 }
 
-.enabled:hover, .enabled:active {
-  outline: none;
-  cursor: pointer;
-  cursor: hand;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  background-image: linear-gradient(180deg, #3273de 0%, #5057ad 100%);
+input {
+  background-color: $white;
+  border: 1px solid #979797;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(0, 0, 0, 0.1);
+  font-variant: small-caps;
+
+  &:focus {
+    outline: none;
+    background-color: $white;
+  }
 }
+
+
 
 .cellphone {
   position: absolute;
