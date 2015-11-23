@@ -1,6 +1,8 @@
 import render from 'staticPage';
 
 import 'CNAME';
+import '../LICENSE';
+import 'README.md';
 
 import Landing from 'components/Landing';
 

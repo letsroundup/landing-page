@@ -1,3 +1,4 @@
+/* eslint no-var: 0 */
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -18,11 +19,13 @@ module.exports = {
     main: './src/index.js',
     landing: './src/static/landing.js',
     analytics: './src/static/analytics.js',
+    privacy: './src/static/privacy.js',
   },
   output: {
     path: path.join(__dirname, 'build'),
     filename: '[name].js',
     libraryTarget: 'umd',
+    publicPath: '/',
   },
   resolve: {
     modulesDirectories: [
@@ -37,6 +40,7 @@ module.exports = {
       '__DEV__': development,
     }),
     new ExtractTextPlugin('main.css'),
+    new webpack.NoErrorsPlugin(),
     new StaticSiteGeneratorPlugin('main', paths, {}),
   ],
   module: {
@@ -46,7 +50,8 @@ module.exports = {
         'style',
         'css?modules&localIdentName=' + lIN + '!autoprefixer?browsers=last 2 version!sass') },
       { test: /\.(png|jpg|jpeg|gif|svg)/, loader: 'file-loader' },
-      { test: /CNAME/, loader: 'file-loader?name=[name]' },
+      { test: /CNAME|LICENSE/, loader: 'file-loader?name=[name]' },
+      { test: /\.md/, loader: 'file-loader?name=[name].[ext]' },
     ],
   },
 };
