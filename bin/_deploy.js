@@ -13,6 +13,11 @@ function run(command) {
   return output;
 }
 
+function build(folder) {
+  rm('-rf', folder);
+  run('npm run build');
+}
+
 function releaseAdRepo(repo, srcFolder, tmpFolder) {
   if (!repo || !srcFolder || !tmpFolder) {
     printErrorAndExit('Bug error. Create github issue: releaseAdRepo - One of parameters is not set.');
@@ -32,7 +37,7 @@ function releaseAdRepo(repo, srcFolder, tmpFolder) {
 }
 
 const repo = 'git@github.com:letsroundup/letsroundup.github.io.git';
-const src = join(__dirname, '..', 'build/*');
+const src = join(__dirname, '..', 'build');
 const tmp = join(__dirname, '..', 'tmp');
-run('npm run build');
-releaseAdRepo(repo, src, tmp);
+build(src);
+releaseAdRepo(repo, src + '/*', tmp);
