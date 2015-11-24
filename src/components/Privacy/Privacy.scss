@@ -2,6 +2,7 @@
   margin: 0 auto;
   padding-right: 15px;
   padding-left: 15px;
+  padding-bottom: 30px;
   position: relative;
   color: #333;
 
@@ -18,13 +19,13 @@
 
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    width: 708px;
   }
 }
 
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 932px;
   }
 }
 
@@ -56,8 +57,10 @@
 }
 
 .header {
-  border-bottom: 1px solid #dddde0;
+  border-bottom: 3px solid #dddde0;
   margin-bottom: 30px;
+  padding-bottom: 15px;
+  padding-top: 15px;
 }
 
 .logo {
@@ -66,16 +69,18 @@
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
  .container {
     height: auto;
     overflow: hidden;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     text-align: center;
   }
   .header {
     width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
   .logo {
     margin-left: auto;
