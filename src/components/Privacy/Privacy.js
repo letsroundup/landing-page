@@ -11,7 +11,7 @@ import logoImg from 'images/logo.svg';
 const ORDER = [
   'introduction', 'information_collection', 'cookies', 'use_of_information',
   'information_sharing', 'public_forums', 'child_safety', 'external_links',
-  'security', 'storage_of_information', 'rights', 'contact',
+  'third_party_data', 'security', 'storage_of_information', 'rights', 'contact',
 ];
 
 import sections from './sectionsContent';
