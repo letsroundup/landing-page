@@ -10,6 +10,7 @@ var development = environment === 'development';
 var paths = [
   '/',
   '/privacy',
+  '/tos',
 ];
 
 var lIN = development ? '[name]__[local]' : '[hash:base64]';
@@ -19,7 +20,7 @@ module.exports = {
     main: './src/index.js',
     landing: './src/static/landing.js',
     analytics: './src/static/analytics.js',
-    privacy: './src/static/privacy.js',
+    legal: './src/static/legal.js',
   },
   output: {
     path: path.join(__dirname, 'build'),

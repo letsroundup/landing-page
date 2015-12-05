@@ -1,0 +1,6 @@
+{
+  "name": "TOS",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./TOS.js"
+}

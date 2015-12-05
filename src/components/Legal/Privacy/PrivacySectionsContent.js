@@ -1,8 +1,16 @@
 import React from 'react';
 
-import styles from './Privacy.scss';
+import styles from '../Legal.scss';
 
-export default {
+export const title = 'Privacy Policy';
+
+export const order = [
+  'introduction', 'information_collection', 'cookies', 'use_of_information',
+  'information_sharing', 'public_forums', 'child_safety', 'external_links',
+  'third_party_data', 'security', 'storage_of_information', 'rights', 'contact',
+];
+
+export const sections = {
   introduction: {
     title: 'Introduction',
     content: [
