@@ -11,17 +11,18 @@
   -moz-osx-font-smoothing: grayscale;
   color: #333;
 
-  h1:hover > & {
-    opacity: 0.75;
-    transition: color .16s linear;
-    color: inherit;
-    &:hover,
-    &:focus {
-      opacity: 1;
-      color: #23527c;
+  h1,h2,h3,h4,h5,h6{
+    &:hover > & {
+      opacity: 0.75;
+      transition: color .16s linear;
+      color: inherit;
+      &:hover,
+      &:focus {
+        opacity: 1;
+        color: #23527c;
+      }
     }
   }
-
 }
 
 @font-face {
@@ -35,17 +36,21 @@
 }
 
 @media screen and (min-width: 768px) {
-  h1:target {
-    // color: #000;
-    font-weight: 600;
-    text-decoration: underline;
+  h1, h2, h3, h4, h5, h6 {
+    &:target {
+      // color: #000;
+      font-weight: 600;
+      text-decoration: underline;
+    }
   }
 }
 @media screen and (max-width: 768px) {
   :global(.anchorjs-link) {
     opacity: 0.25;
   }
-  h1:target {
-    background-color: #eee;
+  h1, h2, h3, h4, h5, h6 {
+    &:target {
+      background-color: #eee;
+    }
   }
 }
