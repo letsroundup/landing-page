@@ -42,7 +42,7 @@
 /* Form */
 .response {
   color: #ce4844;
-  .success {
+  &.success {
     color: #4bc364;
   }
 }
@@ -187,7 +187,7 @@ input {
   }
 
   .response > p {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.75);
     border-radius: 10px;
     padding: 5px 10px;
     margin-top: 5px;

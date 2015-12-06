@@ -53,7 +53,7 @@ function setSuccess(success) {
   response.children('p').text(success);
   response.addClass(styles.success);
   response.removeClass(styles.hidden);
-  $('#phoneNumber').removeClass('error');
+  $('#phoneNumber').removeClass(styles.error);
 }
 
 $(document).ready(() => {
@@ -79,7 +79,12 @@ $(document).ready(() => {
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify({ phoneNumber }),
       success(data) {
-        setSuccess('Thanks! We\'ll text you when it\'s your turn.');
+        if (data && data.msg === 'Already added.') {
+          setError('You\'re already on the waiting list.');
+          $('.button').addClass('enabled');
+        } else {
+          setSuccess('Thanks! We\'ll text you when it\'s your turn.');
+        }
       },
       error(data, status, error) {
         console.error(data);
