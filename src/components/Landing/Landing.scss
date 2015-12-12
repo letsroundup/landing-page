@@ -137,6 +137,13 @@ input {
     height: auto;
   }
 
+  .twilio {
+    width: 100px;
+    height: auto;
+    margin: auto;
+    padding-bottom: 10px;
+  }
+
   .info {
     color:$white;
     position: absolute;
@@ -224,6 +231,10 @@ input {
   .formContainer {
     padding-top: 20px;
   }
+
+  .twilio {
+    width: 130px;
+  }
 }
 
 @media screen and (min-width:600px) and (max-width:767px) {
@@ -233,6 +244,10 @@ input {
 
   .button {
     margin-right: 70px;
+  }
+
+  .twilio {
+    width: 170px;
   }
 }
 /* End form twicking */
@@ -300,6 +315,13 @@ input {
     height: 10vh;
     bottom: 10px;
     left: 0;
+  }
+
+  .twilio {
+    height: 3vh;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
   }
 
   .info {

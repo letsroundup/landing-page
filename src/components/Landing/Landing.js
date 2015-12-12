@@ -6,6 +6,7 @@ import headerImg from 'images/header-small.png';
 import cellphoneImg from 'images/cellphone@2x.png';
 import handImg from 'images/hand.png';
 import logoImg from 'images/logo.svg';
+import twilioImg from 'images/twilio.png';
 
 const DESCRIPTION = 'RoundUp lets you find deals at your favourite spots and easily solidify plans with your friends.';
 
@@ -53,6 +54,9 @@ export default class Landing extends React.Component {
           </div>
           <div className={styles.logoContainer}>
             <img className={styles.logo} src={logoImg}/>
+          </div>
+          <div className={styles.logoContainer}>
+            <img className={styles.twilio} src={twilioImg}/>
           </div>
         </div>
         <script type="text/javascript" src="/landing.js"/>
