@@ -144,6 +144,7 @@ input {
   .twilioContainer {
     display: flex;
     justify-content: center;
+    padding-bottom: 10px;
   }
 
   .logo {
@@ -334,7 +335,7 @@ input {
 
   .logo {
     position: absolute;
-    height: 10vh;
+    height: 12vh;
     bottom: 10px;
     left: 0;
   }

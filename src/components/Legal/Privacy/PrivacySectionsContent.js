@@ -222,7 +222,7 @@ export const sections = {
     title: 'Third Party Data',
     content: [
       <p>
-        RoundUp uses the Google Maps API(s) and and you are hereby, in addition, bound by the <a href="https://www.google.com/policies/privacy/">Google Privacy Policy</a>
+        RoundUp Social Inc. uses the Google Maps API(s) and and you are hereby, in addition, bound by the <a href="https://www.google.com/policies/privacy/">Google Privacy Policy</a>
       </p>,
     ],
   },

@@ -8,7 +8,7 @@ const KEYWORDS = [
   'iphone', 'startup', 'together', 'deals', 'specials',
   'restaurant', 'bar', 'restaurants', 'bars', 'happy', 'hour',
 ].join(',');
-const DESCRIPTION = 'RoundUp lets you find deals at your favourite spots and easily solidify plans with your friends.';
+const DESCRIPTION = 'Up Social lets you find deals at your favourite spots and easily solidify plans with your friends.';
 
 export default React.createClass({
   displayName: 'Head',

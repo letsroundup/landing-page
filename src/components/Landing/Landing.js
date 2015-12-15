@@ -8,7 +8,7 @@ import handImg from 'images/hand.png';
 import logoImg from 'images/logo.svg';
 import twilioImg from 'images/twilio.png';
 
-const DESCRIPTION = 'RoundUp lets you find deals at your favourite spots and easily solidify plans with your friends.';
+const DESCRIPTION = 'Up Social lets you find deals at your favourite spots and easily solidify plans with your friends.';
 
 export default class Landing extends React.Component {
   render() {
@@ -20,7 +20,7 @@ export default class Landing extends React.Component {
               This will be an expensive night*
             </div>
             <div className={styles.starHeader}>
-              *If you don't use RoundUp
+              *If you don't use Up Social
             </div>
           </div>
           <img id="header" className={styles.header} src={headerImg}/>
@@ -34,7 +34,7 @@ export default class Landing extends React.Component {
                 This will be an expensive night*
               </div>
               <div className={styles.star}>
-                *If you don't use RoundUp
+                *If you don't use Up Social
               </div>
             </div>
             <div className={styles.formContainer}>
