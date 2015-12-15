@@ -91,6 +91,15 @@ input {
   width: 100%;
 }
 
+.twilioContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.twilio {
+  width: auto;
+}
+
 /* mobile format */
 @media screen and (max-width:767px) {
   .headerContainer {
@@ -132,16 +141,25 @@ input {
     padding: 0 50px;
   }
 
+  .twilioContainer {
+    display: flex;
+    justify-content: center;
+  }
+
   .logo {
     width: 100%;
     height: auto;
   }
 
   .twilio {
-    width: 100px;
-    height: auto;
-    margin: auto;
-    padding-bottom: 10px;
+    width: auto;
+    height: 25px;
+  }
+
+  .powered {
+    padding-right: 6px;
+    padding-bottom: 3px;
+    align-self: flex-end;
   }
 
   .info {
@@ -233,7 +251,7 @@ input {
   }
 
   .twilio {
-    width: 130px;
+    height: 28px;
   }
 }
 
@@ -247,7 +265,11 @@ input {
   }
 
   .twilio {
-    width: 170px;
+    height: 32px;
+  }
+
+  .powered {
+    padding-bottom: 5px;
   }
 }
 /* End form twicking */
@@ -317,8 +339,15 @@ input {
     left: 0;
   }
 
+  .powered {
+    position: absolute;
+    bottom: 20px;
+    right: 120px;
+  }
+
   .twilio {
-    height: 3vh;
+    width: 100px;
+    height: auto;
     position: absolute;
     bottom: 16px;
     right: 16px;

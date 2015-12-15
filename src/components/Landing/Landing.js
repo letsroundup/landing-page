@@ -55,7 +55,8 @@ export default class Landing extends React.Component {
           <div className={styles.logoContainer}>
             <img className={styles.logo} src={logoImg}/>
           </div>
-          <div className={styles.logoContainer}>
+          <div className={styles.twilioContainer}>
+            <span className={styles.powered}>Powered by </span>
             <img className={styles.twilio} src={twilioImg}/>
           </div>
         </div>
