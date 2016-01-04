@@ -5,6 +5,20 @@ import headerImg from 'images/header.jpg';
 
 import styles from 'components/Landing/Landing.scss';
 
+$(document).ready(() => {
+  const phoneNumberParam = getParameterByName('phone');
+  if (phoneNumberParam) {
+    $('#phoneNumber').val(phoneNumberParam);
+  }
+});
+
+function getParameterByName(name) {
+  const escapedName = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+  const regex = new RegExp('[\\?&]' + escapedName + '=([^&#]*)');
+  const results = regex.exec(location.search);
+  return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
+
 function onResize() {
   const scrollbar = window.innerWidth - $(window).width();
   const width = $('body').width() + scrollbar;
