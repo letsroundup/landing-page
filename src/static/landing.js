@@ -9,6 +9,7 @@ $(document).ready(() => {
   const phoneNumberParam = getParameterByName('phone');
   if (phoneNumberParam) {
     $('#phoneNumber').val(phoneNumberParam);
+    validateForm();
   }
 });
 
