@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { contactUs } from '../common';
+
 import styles from '../Legal.scss';
 
 export const title = 'Terms of Service';
@@ -282,7 +284,7 @@ export const sections = {
     content: [
       <p>
         These Terms will be governed by the laws of the Commonwealth of Massachusetts without regard to conflict of law principles. To the extent that any lawsuit or court proceeding is permitted under the Terms, you and RoundUp Social agree to submit to the personal and exclusive jurisdiction of the state courts and federal courts located within San Francisco, California, for the purpose of litigating all such disputes.
-      </p>
+      </p>,
     ],
   },
   general: {
@@ -341,18 +343,5 @@ export const sections = {
       </ol>,
     ],
   },
-  contact: {
-    title: 'Contacting Us',
-    content: [
-      <p>
-        Please submit any questions, concerns or comments you have about this privacy policy or any requests concerning your personal data by email to <a href="mailto:info@letsroundup.com">info@letsroundup.com</a>, by telephone on 650-422-8866 between the hours of 9am to 5pm, Monday to Friday or write to us at:
-      </p>,
-      <address>
-        RocketSpace, 4th Floor – RoundUp Social Inc.<br/>
-        180 Sansome Street<br/>
-        San Francisco, California, USA<br/>
-        94133<br/>
-      </address>,
-    ],
-  }
+  contact: contactUs,
 };

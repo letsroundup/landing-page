@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { contactUs } from '../common';
+
 import styles from '../Legal.scss';
 
 export const title = 'Privacy Policy';
@@ -136,7 +138,7 @@ export const sections = {
       </ul>,
       <p>
         In addition to cookies, tracking Gifs may be set by us or third parties in respect of your use of the App. Tracking Gifs are small image files within the content of the App or the body of our newsletters so we or third parties can understand which parts of the App are visited and whether particular content is of interest.
-      </p>
+      </p>,
     ],
   },
   use_of_information: {
@@ -256,18 +258,5 @@ export const sections = {
       </p>,
     ],
   },
-  contact: {
-    title: 'Contacting us',
-    content: [
-      <p>
-        Please submit any questions, concerns or comments you have about this privacy policy or any requests concerning your personal data by email to <a href="mailto:info@letsroundup.com">info@letsroundup.com</a>, by telephone on 650-422-8866 between the hours of 9am to 5pm, Monday to Friday or write to us at:
-      </p>,
-      <address>
-        RocketSpace, 4th Floor – RoundUp Social Inc.<br/>
-        180 Sansome Street<br/>
-        San Francisco, California, USA<br/>
-        94133<br/>
-      </address>,
-    ],
-  },
+  contact: contactUs,
 };
