@@ -2,6 +2,7 @@ import React from 'react';
 
 import favicon from 'images/favicon.png';
 import appleTouchIcon from 'images/apple-touch-icon.png';
+import logoImg from 'images/logo.svg';
 
 const KEYWORDS = [
   'planning', 'calendar', 'dynamic pricing', 'chat',
@@ -11,10 +12,13 @@ const KEYWORDS = [
   'happy hours', 'social', 'voo', 'rdvoo', 'rendez-voo',
   'rendez-vous', 'tryvoo', 'events', 'plans',
 ].join(',');
-const DESCRIPTION = 'Know what the places you love are offering. Solidify plans with your friends.';
 
 const commentIE = '<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->';
 const commentIE9 = '<!--[if lt IE 9]><script src="js/html5shiv.js"></script><script src="js/respond.min.js"></script><![endif]-->';
+
+const DESCRIPTION = 'Know what the places you love are offering. Solidify plans with your friends.';
+const SOCIAL_DESCRIPTION = 'Voo helps you and your friends to go to the places you love, for less.';
+const NAME = 'Voo';
 
 export default React.createClass({
   displayName: 'Head',
@@ -41,25 +45,25 @@ export default React.createClass({
 
         {/* Social Media metatags */}
         {/* Schema.org markup for Google+ */}
-        <meta itemProp="name" content="TryVoo"/>
-        <meta itemProp="description" content="Voo helps you and your friends to go to the places you love, for less."/>
-        <meta itemProp="image" content="http://www.example.com/images/logo.svg"/>
+        <meta itemProp="name" content={NAME}/>
+        <meta itemProp="description" content={SOCIAL_DESCRIPTION}/>
+        <meta itemProp="image" content={logoImg}/>
 
         {/* Twitter Card data */}
         <meta name="twitter:card" content="product"/>
-        <meta name="twitter:site" content="@voo"/>
-        <meta name="twitter:title" content="TryVoo"/>
-        <meta name="twitter:description" content="Voo helps you and your friends to go to the places you love, for less."/>
-        <meta name="twitter:creator" content="@voo"/>
-        <meta name="twitter:image" content="http://www.tryvoo.com/images/logo.svg"/>
+        <meta name="twitter:site" content="@RdVoo"/>
+        <meta name="twitter:title" content={NAME}/>
+        <meta name="twitter:description" content={SOCIAL_DESCRIPTION}/>
+        <meta name="twitter:creator" content="@RdVoo"/>
+        <meta name="twitter:image" content={logoImg}/>
 
         {/* Open Graph data */}
-        <meta property="og:title" content="TryVoo"/>
+        <meta property="og:title" content={NAME}/>
         <meta property="og:type" content="website"/>
         <meta property="og:url" content="http://www.tryvoo.com"/>
-        <meta property="og:image" content="http://www.tryvoo.com/images/logo.svg"/>
-        <meta property="og:description" content="Voo helps you and your friends to go to the places you love, for less."/>
-        <meta property="og:site_name" content="TryVoo"/>
+        <meta property="og:image" content={logoImg}/>
+        <meta property="og:description" content={SOCIAL_DESCRIPTION}/>
+        <meta property="og:site_name" content={NAME}/>
 
         {/* Favicons And Touch Icons */}
         <link rel="shortcut icon" type="image/png" href={favicon}/>
