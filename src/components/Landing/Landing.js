@@ -26,7 +26,7 @@ const navs = [
   { id: '#contact', label: 'Contact' },
 ];
 
-const downloadButton = <a href="https://1pd8.app.link/cXtb501wVs"><img src={appleDownloadImg} alt="Apple App Store" /></a>;
+const downloadButton = <a href="https://1pd8.app.link/app-store"><img src={appleDownloadImg} alt="Apple App Store" /></a>;
 
 const Video = ({ src, alt, className }) => (
   <video autoPlay loop muted className={className} alt={alt}>
