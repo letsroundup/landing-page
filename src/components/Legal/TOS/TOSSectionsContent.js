@@ -21,13 +21,13 @@ export const sections = {
     title: 'Introduction',
     content: [
       <p>
-        Welcome, and thank you for your interest in RoundUp Social, Inc., Inc. (<b>RoundUp Social</b>, <b>we</b>, <b>us</b> and <b>our</b>) and our website at <a href="http://letsroundup.com">letsroundup.com</a> and applicable software applications across mobile platforms (collectively, the <b>Site</b>) as well as all related networks. These Terms of Service are a legally binding contract between you and RoundUp Social regarding your use of the Site.
+        Welcome, and thank you for your interest in RoundUp Social, Inc., Inc. (<b>RoundUp Social</b>, <b>we</b>, <b>us</b> and <b>our</b>) and our website at <a href="http://letsroundup.com">letsroundup.com</a> and applicable software applications across mobile platforms (collectively, the <b>Site</b>) as well as all related networks. These Terms of Service are a legally binding contract between you and RoundUp Social, and its related service providers, regarding your use of the Site.
       </p>,
       <p>
         By using the Site and/or using the services offered on the Site (<b>Services</b>), you agree to be bound by these Terms. You should print a copy of these terms and conditions for future reference. Use of your personal information submitted to or via the Site is governed by our <a href="http://letsroundup.com/privacy">Privacy and Cookies Policy</a>
       </p>,
       <p>
-        These terms and conditions were last updated on 15 November 2015.
+        These terms and conditions were last updated on Saturday April 30th, 2016.
       </p>,
       <p>
         PLEASE READ THE FOLLOWING TERMS OF SERVICE CAREFULLY. BY CLICKING “I ACCEPT” OR BY ACCESSING OR USING THE SITE, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THE FOLLOWING TERMS AND CONDITIONS, INCLUDING THE ROUNDUP SOCIAL PRIVACY POLICY (COLLECTIVELY, THESE <b>TERMS</b>). If you are not eligible, or do not agree to these Terms, then please do not use the Site.
@@ -86,7 +86,7 @@ export const sections = {
     content: [
       <ol className={styles.orderedList}>
         <li>
-          Please read the RoundUp Social Privacy Policy carefully for information relating to our collection, use, storage and disclosure of your personal information. The RoundUp Social Privacy Policy is hereby incorporated by reference into, and made a part of, these Terms.
+          Please read the RoundUp Social Privacy Policy carefully for information relating to our collection, use, storage and disclosure of your personal information, including phone numbers and calendar entries. The RoundUp Social Privacy Policy is hereby incorporated by reference into, and made a part of, these Terms.
         </li>
         <li>
           Your use of the Site is subject to any and all additional terms, policies, rules or guidelines applicable to the Site or certain features of the Site that we may post on or link to on the Site (<b>Additional Terms</b>), such as end-user license agreements for any downloadable applications that we may offer or rules applicable to particular features or content on the service, subject to the Changes to the Terms section below in Section 3. All such Additional Terms are hereby incorporated by reference into, and made a part of, these Terms.
@@ -283,7 +283,7 @@ export const sections = {
     title: 'Governing Law',
     content: [
       <p>
-        These Terms will be governed by the laws of the Commonwealth of Massachusetts without regard to conflict of law principles. To the extent that any lawsuit or court proceeding is permitted under the Terms, you and RoundUp Social agree to submit to the personal and exclusive jurisdiction of the state courts and federal courts located within San Francisco, California, for the purpose of litigating all such disputes.
+        These Terms will be governed by the laws of the State of California without regard to conflict of law principles. To the extent that any lawsuit or court proceeding is permitted under the Terms, you and RoundUp Social agree to submit to the personal and exclusive jurisdiction of the state courts and federal courts located within San Francisco, California, for the purpose of litigating all such disputes.
       </p>,
     ],
   },

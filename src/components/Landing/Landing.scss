@@ -1,468 +1,129 @@
-@import "~common/reset.scss";
-@import "~common/constants.scss";
-@import "~common/retina.mixins.scss";
+$grayBackground: #f1f1f1;
 
-.hidden {
-  display: none;
-}
+$homePadding: 250px;
 
-.error {
-  border-color: #ce4844;
-  color: #ce4844;
-
-  &:focus {
-    box-shadow: 0 0 7px rgba(195, 81, 75, 0.5) !important;
-  }
-}
-
-.button {
-  outline: none;
-  background-image: linear-gradient(180deg, #8dace0 0%, #898ece 100%);
-  border-radius: 3px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  color:$white;
-  font-weight: 600;
-  font-variant: small-caps;
-  &.enabled {
-    outline: none;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-    background-image: linear-gradient(180deg, #598bdf 0%, #5e67d0 100%);
-
-    &:hover, &:active {
-      outline: none;
-      cursor: pointer;
-      cursor: hand;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-      background-image: linear-gradient(180deg, #3273de 0%, #5057ad 100%);
-    }
-  }
-}
-
-
-/* Form */
-.response {
-  color: #ce4844;
-  &.success {
-    color: #4bc364;
-  }
-}
-
-input {
-  background-color: $white;
-  border: 1px solid #979797;
-  border-radius: 3px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(0, 0, 0, 0.1);
-  font-variant: small-caps;
-
-  &:focus {
-    outline: none;
-    background-color: $white;
-  }
-}
-
-
-
-.cellphone {
-  position: absolute;
-}
-
-.hand, .header {
-  visibility: hidden;
-}
-
-/* End form */
-
-/* Images */
-.handContainer {
-  @include retina('hand');
-  background-repeat: no-repeat;
-  background-position: bottom left;
-  background-size: contain;
-}
-
-.headerContainer {
-  @include retina('header', 'jpg');
-  background-repeat: no-repeat;
-  background-position: top left;
-  background-size: cover;
-}
-
-.handContainer img {
-  width: 100%;
-}
-
-.twilioContainer {
-  display: flex;
-  justify-content: center;
-}
-
-.twilio {
+:global(.img-responsive) {
+  margin: 0 auto;
   width: auto;
+  max-height: 100vh;
 }
 
-/* mobile format */
-@media screen and (max-width:767px) {
-  .headerContainer {
-    background: url("images/header-small.png") no-repeat;
-    overflow: hidden;
-  }
 
-  .textContainerHeader {
-    display: none;
-  }
-  /* Text */
-  .textContainer {
-    padding: 20px 0;
-    background-color: rgba(0, 0, 0, 0.3);
-  }
+.home {
+  background: $grayBackground;
+  padding: $homePadding 0px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
 
-  .text {
-    font-size: 6vw;
-  }
+.introMobile {
+  position: absolute;
+  left: 0px;
+  bottom: - $homePadding;
+  max-width: 50%;
+  height: 702px;
+  width: 490px;
+}
 
-  .star {
-    padding-top: 5px;
-    font-size: 4vw;
-  }
 
-  .handContainer {
-    margin: 0 5vw;
-    width: 70%;
-    height: auto;
-  }
-
-  .hand {
-    width: 100%;
-    height: auto;
-  }
-
-  .logoContainer {
-    height: auto;
-    padding: 0 50px;
-  }
-
-  .twilioContainer {
-    padding-top: 16px;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 10px;
-  }
-
-  .logo {
-    padding-top: 20px;
-    width: 100%;
-    height: auto;
-  }
-
-  .twilio {
-    width: auto;
-    height: 25px;
-  }
-
-  .powered {
-    padding-right: 6px;
-    padding-bottom: 3px;
-    align-self: flex-end;
-  }
-
-  .info {
-    color:$white;
+.leftMobFront {
     position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    font-weight: 600;
+    left: 12%;
+    margin: 0px auto;
+    top:-40px;
+    z-index: 2;
+    background-image: url("images/left-mob-front.png");
+    background-size: cover;
+    height: 626px;
+    width: 380px;
+}
+.leftMobBack {
+    position: absolute;
+    left:0px;
+    top:-20px;
+    z-index: 1;
+    background-image: url("images/left-mob-back.png");
+    background-size: cover;
+    height: 626px;
+    width: 380px;
+}
+
+.rightMobFront {
+  position: absolute;
+  right: 12%;
+  margin: 0px auto;
+  top:-40px;
+  z-index: 2;
+  background-image: url("images/right-mob-front.png");
+  background-size: cover;
+  height: 626px;
+  width: 380px;
+}
+
+.rightMobBack {
+  position: absolute;
+  right:0px;
+  top:-20px;
+  z-index: 1;
+  background-image: url("images/right-mob-back.png");
+  background-size: cover;
+  height: 626px;
+  width: 380px;
+}
+
+.downloadSection {
+  $size: 412px;
+  text-align: center;
+  background: url("images/pattern.png") repeat;
+  background-size: $size $size;
+}
+
+
+@media only screen and (max-width : 992px) {
+  .home {
     text-align: center;
   }
-
-  .form {
-    display: flex;
+  .home, :global(.section) {
+    padding: 100px 0px;
   }
 
-  .response {
-    padding-top: 15px;
-    font-weight: 600;
-    font-size: 5.5vmin;
+  .introMobile {
+    position: static;
+    max-width: 300px;
+    max-height: 429px;
   }
-
-  .headerContainer {
-    position: relative;
+  .leftMobFront {
+    right: 0px;
+    left: auto;
+    max-width: 100%;
+    top: 0px;
+    height: 100%;
   }
-
-  .cellphone {
-    display: block;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    height: 47%;
-    width: auto;
+  .leftMobBack {
+    left: -30px;
+    max-width: 100%;
+    top: 0px;
   }
-
-  input {
-    flex: 1;
-    margin-left: 25px;
-    font-size: 1em;
-    padding: 0.8em 1.3em;
+  .rightMobFront{
+    left: 0px;
+    right: auto;
+    max-width: 100%;
+    top: 0px;
+    height: 100%;
   }
-
-  .button {
-    flex: 1;
-    margin-right: 25px;
-    font-size: 1em;
-    padding: 0.8em 1.3em;
-    margin-left: 4px;
-  }
-
-  .response > p {
-    background-color: rgba(0, 0, 0, 0.75);
-    border-radius: 10px;
-    padding: 5px 10px;
-    margin-top: 5px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  .roundupText {
-    display: none;
-  }
-  .roundupTextMobile {
-    padding: 5vh 5vw;
-    font-size: 6vw;
-    text-align: center;
+  .rightMobBack {
+    right: -30px;
+    max-width: 100%;
+    top: 0px;
+    height: 100%;
   }
 }
 
-/* Mobile form twicking */
-@media screen and (max-width:499px) {
-  .form {
-    flex-direction: column;
+@media only screen and (max-width : 480px) {
+  .leftMobFront, .leftMobBack,
+  .rightMobFront, .rightMobBack {
+    max-width: 80%;
   }
 
-  .form > * {
-    margin: 10px 45px 0 45px;
-  }
 }
-
-@media screen and (min-width:500px) and (max-width:767px) {
-  .form {
-    flex-direction: row;
-  }
-
-  .formContainer {
-    padding-top: 20px;
-  }
-
-  .twilio {
-    height: 28px;
-  }
-}
-
-@media screen and (min-width:600px) and (max-width:767px) {
-  input {
-    margin-left: 70px;
-  }
-
-  .button {
-    margin-right: 70px;
-  }
-
-  .twilio {
-    height: 32px;
-  }
-
-  .powered {
-    padding-bottom: 5px;
-  }
-}
-/* End form twicking */
-/* End mobile format */
-
-/* Tablet and desktop format */
-@media screen and (min-width:768px) {
-  body {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .container {
-    display: flex;
-    flex: 1;
-    min-height: 100px;
-    position: relative;
-  }
-
-
-  .formContainer {
-    position: relative;
-    justify-content: center;
-    position: relative;
-    height: 34vh;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .form {
-    margin-bottom: 15px;
-    flex: 1;
-  }
-
-  .roundupText {
-    font-size: 4vmin;
-    line-height: 1.1;
-    margin-right: 5vw;
-    margin-bottom: 0;
-    flex: 1;
-    align-self: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-  }
-  .roundupTextMobile {
-    display: none;
-  }
-
-  .header {
-    width: 100%;
-    height: auto;
-  }
-
-  .handContainer {
-    background-position: left bottom;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: auto;
-  }
-
-  .logo {
-    position: absolute;
-    height: 12vh;
-    bottom: 10px;
-    left: 0;
-  }
-
-  .powered {
-    position: absolute;
-    bottom: 20px;
-    right: 120px;
-  }
-
-  .twilio {
-    width: 100px;
-    height: auto;
-    position: absolute;
-    bottom: 16px;
-    right: 16px;
-  }
-
-  .info {
-    text-align: center;
-    align-self: center;
-  }
-
-  /* Text */
-  .cellphone {
-    display: none;
-  }
-
-  .textContainer {
-    display: none;
-  }
-
-  .headerContainer {
-    position: relative;
-    max-height: 66vh;
-  }
-
-  .textContainerHeader {
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 4px;
-    padding: 10px 15px;
-   $white-space: nowrap;
-    position: absolute;
-    top: 20%;
-    right: 20px;
-    color:$white;
-    height: auto;
-    text-align: center;
-    font-weight: 600;
-    font-size: 3.5vw;
-  }
-
-  .textHeader {
-    width: 100%;
-    height: auto;
-    font-size: 1em;
-  }
-
-  .starHeader {
-    font-size: 0.75em;
-  }
-
-  .response {
-    padding-top: 10px;
-    font-weight: 600;
-    font-size: 2vw;
-    position: absolute;
-    width: 100%;
-    bottom: 15px;
-  }
-
-  input, .button {
-    flex: 1;
-    margin-right: 2px;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    font-size: 20px;
-    font-size: 3vmin;
-    padding: 10px 15px;
-  }
-
-  input {
-    padding-left: 0.5em;
-  }
-
-  .button {
-    margin-left: 2px;
-  }
-
-  .empty {
-    flex: 1;
-  }
-
-  .info {
-    flex: 2;
-  }
-}
-/* End tablet and desktop format */
-
-/* Tablet format */
-@media screen and (min-width:768px) and (max-width:1023px) {
-  .handContainer {
-    width: 35%;
-  }
-
-  .logo {
-    margin-left: 20%;
-  }
-}
-/* End Tablet format */
-
-/* Desktop format */
-@media screen and (min-width:1024px) {
-  .handContainer {
-    width: 30%;
-  }
-
-  .logo {
-    margin-left: 20%;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .handContainer {
-    width: 25%;
-  }}
-/* End Desktop format */
-

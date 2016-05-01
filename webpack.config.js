@@ -3,6 +3,7 @@ var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var environment = process.env.NODE_ENV || 'development';
 var development = environment === 'development';
@@ -15,15 +16,17 @@ var paths = [
 
 var lIN = development ? '[name]__[local]' : '[hash:base64]';
 
+var outputPath = path.join(__dirname, 'build');
+
 module.exports = {
   entry: {
     main: './src/index.js',
-    landing: './src/static/landing.js',
+    // landing: './src/static/landing.js',
     analytics: './src/static/analytics.js',
     legal: './src/static/legal.js',
   },
   output: {
-    path: path.join(__dirname, 'build'),
+    path: outputPath,
     filename: '[name].js',
     libraryTarget: 'umd',
     publicPath: '/',
@@ -43,6 +46,10 @@ module.exports = {
     new ExtractTextPlugin('main.css'),
     new webpack.NoErrorsPlugin(),
     new StaticSiteGeneratorPlugin('main', paths, {}),
+    new CopyWebpackPlugin([ {
+      context: path.join(__dirname, 'src/thirdparties/'),
+      from: '**/*',
+    } ]),
   ],
   module: {
     loaders: [
@@ -50,9 +57,10 @@ module.exports = {
       { test: /\.(s?css)$/, loader: ExtractTextPlugin.extract(
         'style',
         'css?modules&localIdentName=' + lIN + '!autoprefixer?browsers=last 2 version!sass') },
-      { test: /\.(png|jpg|jpeg|gif|svg)/, loader: 'file-loader' },
+      { test: /\.(png|jpg|jpeg|gif|svg|mp4)/, loader: 'file-loader' },
       { test: /CNAME|LICENSE/, loader: 'file-loader?name=[name]' },
       { test: /\.md/, loader: 'file-loader?name=[name].[ext]' },
     ],
   },
+  devServer: { outputPath },
 };

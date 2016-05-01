@@ -17,7 +17,7 @@ export const sections = {
     title: 'Introduction',
     content: [
       <p>
-        This is the privacy and cookies policy for RoundUp Social, Inc. (<b>we</b>, <b>us</b> and <b>our</b>) in connection with our mobile software application and related website (collectively, the “App”). For the purposes of the Data Protection Act 1998 and similar acts, we are the data controller.
+        This is the privacy and cookies policy for RoundUp Social, Inc., and our related service providers, including but not limited to Google, Localytics, Twilio, OpenTable, Groupon, Uber and Mogl, Imgur, Giphy (<b>we</b>, <b>us</b> and <b>our</b>) in connection with our mobile software application and related website (collectively, the “App”). For the purposes of the Data Protection Act 1998 and similar acts, we are the data controller.
       </p>,
       <p>
         We are committed to protecting your privacy on-line. We appreciate that you do not want the personal information you provide to us distributed indiscriminately and here we explain how we collect information, what we do with it and what controls you have.
@@ -26,7 +26,7 @@ export const sections = {
         By using the App on certain terminals such as an iPhone, iPad, iPod, Windows, Mac or Android, you consent to the collection and use of information in accordance with this privacy policy.
       </p>,
       <p>
-        We reserve the right to change this privacy policy from time to time by changing it on the App and website. This privacy policy was last updated on <b>Tuesday December 3rd, 2015</b>.
+        We reserve the right to change this privacy policy from time to time by changing it on the App and website. This privacy policy was last updated on <b>Saturday April 30th, 2016</b>.
       </p>,
     ],
   },
@@ -59,10 +59,10 @@ export const sections = {
         You are under no obligation to provide any such information. However, if you should choose to withhold requested information, we may not be able to provide you with all or some of the services.
       </p>,
       <p>
-        We may, from time to time, run referral programs or similar initiatives, such as a "Tell a Friend" program, that invite you to provide us with the contact details of someone who is known to you who may find our products or services to be of interest. We will only use those contact details for the purpose of the relevant initiative (and not for general marketing purposes). By providing us with their details, you confirm that you have their permission to do so and must not provide us with the details of anyone from whom you do not have such permission. We reserve the right to identify you as the person who has made the referral in the message that is sent to them.
+        We may, from time to time, run referral programs or similar initiatives, such as a "Tell a Friend" program, that invite you to provide us with the contact details of someone who is known to you who may find our products or services to be of interest. We will only use those contact details for the purpose of the relevant initiative (and never for general marketing purposes). By providing us with their details, you confirm that you have their permission to do so and must not provide us with the details of anyone from whom you do not have such permission. We reserve the right to identify you as the person who has made the referral in the message that is sent to them.
       </p>,
       <p>
-        When you visit the App, we may automatically collect additional information about you, such as the type of internet browser you use, any website from which you have come to the App and your IP address (the unique address which identifies your computer on the internet) which is automatically recognised by our web server. You cannot be identified from this information and it is only used to assist us in providing an effective service on the App and to collect broad demographic information for aggregate use.
+        When you visit the App, we may automatically collect additional information about you, such as the type of internet browser you use, any website from which you have come to the App and your IP address (the unique address which identifies your computer on the internet) which is automatically recognized by our web server. You cannot be identified from this information and it is only used to assist us in providing an effective service on the App and to collect broad demographic information for aggregate use.
       </p>,
     ],
   },
@@ -80,7 +80,7 @@ export const sections = {
           remember that you have visited us before; this means we can identify the number of unique visitors we receive. This allows us to make sure we have enough capacity for the number of users that we get;
         </li>
         <li>
-          customise elements of the promotional layout and/or content of the pages of the App;
+          customize elements of the promotional layout and/or content of the pages of the App;
         </li>
         <li>
           collect anonymous statistical information about how you use the App (including how long you spend on the App) and where you have come to the App from, so that we can improve the App and learn which parts of the App are most popular with visitors;
@@ -93,7 +93,7 @@ export const sections = {
         </li>
       </ul>,
       <p>
-        Some of the cookies used by the App are set by us, and some are set by third parties who are delivering services on our behalf.
+        Some of the cookies used by the App are set by us, and some are set by third parties who are delivering services on our behalf, including but not limited to Google, Localytics, Twilio, OpenTable, Groupon, Uber and Mogl.
       </p>,
       <p>
         Most web browsers automatically accept cookies but, if you prefer, you can change your browser to prevent that or to notify you each time a cookie is set. You can also learn more about cookies by visiting <a href="www.allaboutcookies.org">www.allaboutcookies.org</a> which includes additional useful information on cookies and how to block cookies using different types of browser. Please note, however, that by blocking or deleting cookies used on the App, you may not be able to take full advantage of the App.
@@ -186,10 +186,10 @@ export const sections = {
         We may disclose aggregate statistics about visitors to the App, customers and sales in order to describe our services to prospective partners, advertisers, sponsors and other reputable third parties and for other lawful purposes, but these statistics will include no personally identifiable information.
       </p>,
       <p>
-        We may disclose your personal information to any of our affiliates, or to our agents or contractors who assist us in providing the services we offer through the App, processing transactions, fulfilling requests for information, receiving and sending communications, updating marketing lists, analysing data, providing support services or in other tasks, from time to time. Our agents and contractors will only use your information to the extent necessary to perform their functions.
+        We may disclose your personal information to any of our affiliates, or to our agents or contractors who assist us in providing the services we offer through the App, processing transactions, fulfilling requests for information, receiving and sending communications, updating marketing lists, analyzing data, providing support services or in other tasks, from time to time. Our agents and contractors will only use your information to the extent necessary to perform their functions.
       </p>,
       <p>
-        In the event that we undergo re-organisation or are sold to a third party, you agree that any personal information we hold about you may be transferred to that re-organised entity or third party.
+        In the event that we undergo re-organization or are sold to a third party, you agree that any personal information we hold about you may be transferred to that re-organized entity or third party.
       </p>,
       <p>
         We may disclose your personal information if required to do so by law or if we believe that such action is necessary to prevent fraud or cyber crime or to protect the App or the rights, property or personal safety of any person.
@@ -224,7 +224,16 @@ export const sections = {
     title: 'Third Party Data',
     content: [
       <p>
-        RoundUp Social Inc. uses the Google Maps API(s) and and you are hereby, in addition, bound by the <a href="https://www.google.com/policies/privacy/">Google Privacy Policy</a>
+        RoundUp Social Inc. use or may in the future use{' '}
+        (i) the Google Maps API(s) and and you are hereby, in addition, bound by the <a href="https://www.google.com/policies/privacy/">Google Privacy Policy</a>;{' '}
+        (ii) Localytics and you are additionally bound by their <a href="https://www.localytics.com/privacy-policy/">Privacy Policy</a>;{' '}
+        (iii) Twillio and you are additionally bound by their <a href="https://www.twilio.com/legal/privacy">Privacy Policy</a>;{' '}
+        (iv) OpenTable and you are additionally bound by their <a href="http://www.opentable.com/info/privacypolicy.aspx">Privacy Policy</a>;{' '}
+        (v) Groupon and you are additionally bound by their <a href="https://www.groupon.com/privacy">Privacy Policy</a>;{' '}
+        (vi) Uber and you are additionally bound by their <a href="https://www.uber.com/legal/privacy/users/en/">Privacy Policy</a>;{' '}
+        (vii) Mogl and you are additionally bound by their <a href="https://www.mogl.com/st/privacyPolicy.ajax">Privacy Policy</a>.
+        (viii) Imgur and you are additionally bound by their <a href="https://imgur.com/privacy">Privacy Policy</a>.
+        (viii) Giphy and you are additionally bound by their <a href="https://giphy.com/privacy">Privacy Policy</a>.
       </p>,
     ],
   },
@@ -232,7 +241,7 @@ export const sections = {
     title: 'Security',
     content: [
       <p>
-        We place great importance on the security of all personally identifiable information associated with our users. We have security measures in place to attempt to protect against the loss, misuse and alteration of personal information under our control. For example, our security and privacy policies are periodically reviewed and enhanced as necessary and only authorised personnel have access to personal information. Whilst we cannot ensure or guarantee that loss, misuse or alteration of information will never occur, we use all reasonable efforts to prevent it.
+        We place great importance on the security of all personally identifiable information associated with our users. We have security measures in place to attempt to protect against the loss, misuse and alteration of personal information under our control. For example, our security and privacy policies are periodically reviewed and enhanced as necessary and only authorized personnel have access to personal information. Whilst we cannot ensure or guarantee that loss, misuse or alteration of information will never occur, we use all reasonable efforts to prevent it.
       </p>,
       <p>
         You should bear in mind that submission of information over the internet is never entirely secure. We cannot guarantee the security of information you submit via the App whilst it is in transit over the internet and any such submission is at your own risk.

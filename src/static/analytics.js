@@ -1,12 +1,11 @@
 /* eslint-disable */
 if (!__DEV__) {
-  (function(l,y,t,i,c,s) {
-    l['LocalyticsGlobal'] = i;
-    l[i] = function() { (l[i].q = l[i].q || []).push(arguments) };
-    l[i].t = +new Date;
-    (s = y.createElement(t)).type = 'text/javascript';
-    s.src = '//web.localytics.com/v3/localytics.js';
-    (c = y.getElementsByTagName(t)[0]).parentNode.insertBefore(s, c);
-    ll('init', '2a8c1a0ed02b9a3aa68270e-74ab6140-8727-11e5-9c3c-003e57fecdee', { trackPageView: true });
-  })(window, document, 'script', 'll');
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  window.ga('create', 'UA-76811752-1', 'auto');
+} else {
+  window.ga = (...args) => console.debug('ANALYTICS:', ...args);
 }
+

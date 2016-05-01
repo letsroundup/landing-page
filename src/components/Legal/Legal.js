@@ -10,17 +10,15 @@ import logoImg from 'images/logo.svg';
 export default class Legal extends React.Component {
   static propTypes = {
     title: React.PropTypes.string.isRequired,
-    order: React.PropTypes.arrayOf(
+    order: React.PropTypes.arrayOf(React.PropTypes.string),
+    sections: React.PropTypes.objectOf(
       React.PropTypes.shape({
         title: React.PropTypes.string.isRequired,
         content: React.PropTypes.arrayOf(
           React.PropTypes.node
         ).isRequired,
       })
-    ),
-    sections: React.PropTypes.arrayOf(
-      React.PropTypes.string
-    ).isRequired,
+    )
   };
 
   render() {

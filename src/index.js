@@ -8,7 +8,6 @@ import Landing from 'components/Landing';
 import Privacy from 'components/Legal/Privacy';
 import TOS from 'components/Legal/TOS';
 
-import 'common/global.scss';
 import 'common/anchor.scss';
 
 // This needs to be an es5 export of the plugin explodes
