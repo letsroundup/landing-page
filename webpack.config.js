@@ -62,5 +62,5 @@ module.exports = {
       { test: /\.md/, loader: 'file-loader?name=[name].[ext]' },
     ],
   },
-  devServer: { outputPath },
+  devServer: { outputPath, host: '0.0.0.0' },
 };

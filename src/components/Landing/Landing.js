@@ -15,6 +15,8 @@ import pinIconImg from 'images/svg/pin.svg';
 import upvoteIconImg from 'images/svg/upvote.svg';
 import atIconImg from 'images/svg/at.svg';
 import happyIconImg from 'images/svg/happy.svg';
+import homeSlateImg from 'images/home.slate.jpg';
+import chatSlateImg from 'images/chat.slate.jpg';
 
 const navs = [
   { id: '#intro', label: 'Home' },
@@ -28,9 +30,9 @@ const navs = [
 
 const downloadButton = <a href="https://1pd8.app.link/app-store"><img src={appleDownloadImg} alt="Apple App Store" /></a>;
 
-const Video = ({ src, alt, className }) => (
-  <video autoPlay loop muted className={className} alt={alt}>
-    <source src={src} type="video/mp4"/>
+const Video = ({ src, alt, className, slate }) => (
+  <video autoPlay loop muted className={className} alt={alt} poster={slate}>
+    <source src={src} type="video/mp4" />
     Sorry, your browser doesn't support embedded videos,
     but don't worry, you can <a href={src}>download it</a>
     and watch it with your favorite video player!
@@ -74,6 +76,7 @@ export default class Landing extends React.Component {
                 src={homeScreenVideo}
                 alt="Video showing the home screen, following a place, inviting friends"
                 className={`${styles.introMobile} img-responsive`}
+                slate={homeSlateImg}
               />
               <div className="col-md-6 col-md-offset-6">
                 <h1>The <span className="bold">places </span>you follow.<br/> The <span className="bold">people </span>you care about.</h1>
@@ -193,7 +196,12 @@ export default class Landing extends React.Component {
               </div>
 
               <div className="col-md-4">
-                <Video src={featuresMobVideo} className="img-responsive" alt="Video showing the Chat" />
+                <Video
+                  src={featuresMobVideo}
+                  className="img-responsive"
+                  alt="Video showing the Chat"
+                  slate={chatSlateImg}
+                />
               </div>
 
               <div className="col-md-4 rightFeatures">
