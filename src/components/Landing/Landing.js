@@ -44,7 +44,7 @@ export default class Landing extends React.Component {
     return (
       <body id="page-top" data-spy="scroll" data-target="#scrollspy-nav">
         <div className="preloader">
-          <div className="status">
+          <div className={styles.status}>
               <img src={logoImg} alt="loading..."/>
           </div>
         </div>
@@ -195,7 +195,7 @@ export default class Landing extends React.Component {
 
               </div>
 
-              <div className="col-md-4">
+              <div className="col-md-4 chatVideo">
                 <Video
                   src={featuresMobVideo}
                   className="img-responsive"
@@ -333,9 +333,9 @@ export default class Landing extends React.Component {
               <ul className="clearlist socialList">
                 <li><a href="https://www.facebook.com/RdVoo/"><i className="fa fa-facebook"></i><span className="hidden-xs">Facebook</span></a></li>
                 <li><a href="https://twitter.com/RdVoo"><i className="fa fa-twitter"></i><span className="hidden-xs">Twitter</span></a></li>
-                <li><a href="#"><i className="fa fa-linkedin"></i><span className="hidden-xs">LinkedIn</span></a></li>
+                <li><a href="https://www.linkedin.com/company/10620342"><i className="fa fa-linkedin"></i><span className="hidden-xs">LinkedIn</span></a></li>
                 <li><a href="https://medium.com/rendez-voo"><i className="fa fa-medium"></i><span className="hidden-xs">Medium</span></a></li>
-                {/* <li><a href="#"><i className="fa fa-github"></i><span className="hidden-xs">github</span></a></li> */}
+                {/* <li><a href="https://github.com/letsroundup"><i className="fa fa-github"></i><span className="hidden-xs">github</span></a></li> */}
               </ul>
               <hr/>
               <p>By using our services, you agree to the <a className="textBlue" href="/tos">Terms&nbsp;of&nbsp;Service</a> and <a className="textBlue" href="/privacy">Privacy&nbsp;Policy</a></p>

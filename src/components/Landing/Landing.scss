@@ -8,6 +8,20 @@ $homePadding: 250px;
   max-height: 100vh;
 }
 
+video {
+  background-color: transparent !important;
+}
+
+.status {
+  $width: 211px;
+  $height: 50px;
+  width: $width;
+  height: $height;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%)
+}
 
 .home {
   background: $grayBackground;
