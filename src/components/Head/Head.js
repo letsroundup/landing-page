@@ -2,7 +2,7 @@ import React from 'react';
 
 import favicon from 'images/favicon.png';
 import appleTouchIcon from 'images/apple-touch-icon.png';
-import logoImg from 'images/logo.svg';
+import logoImg from 'images/square512.png';
 
 const KEYWORDS = [
   'planning', 'calendar', 'dynamic pricing', 'chat',
@@ -52,9 +52,9 @@ export default React.createClass({
         {/* Twitter Card data */}
         <meta name="twitter:card" content="product"/>
         <meta name="twitter:site" content="@RdVoo"/>
+        <meta name="twitter:creator" content="@RdVoo"/>
         <meta name="twitter:title" content={NAME}/>
         <meta name="twitter:description" content={SOCIAL_DESCRIPTION}/>
-        <meta name="twitter:creator" content="@RdVoo"/>
         <meta name="twitter:image" content={logoImg}/>
 
         {/* Open Graph data */}
