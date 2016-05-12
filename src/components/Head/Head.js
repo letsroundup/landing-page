@@ -50,12 +50,16 @@ export default React.createClass({
         <meta itemProp="image" content={logoImg}/>
 
         {/* Twitter Card data */}
-        <meta name="twitter:card" content="product"/>
+        <meta name="twitter:card" content="app"/>
         <meta name="twitter:site" content="@RdVoo"/>
-        <meta name="twitter:creator" content="@RdVoo"/>
-        <meta name="twitter:title" content={NAME}/>
         <meta name="twitter:description" content={SOCIAL_DESCRIPTION}/>
+        <meta name="twitter:app:name:iphone" content={NAME}/>
+        <meta name="twitter:app:id:iphone" content="1035084963"/>
+        <meta name="twitter:app:id:ipad" content=""/>
+        <meta name="twitter:app:id:googleplay" content=""/>
+        <meta name="twitter:title" content={NAME}/>
         <meta name="twitter:image" content={logoImg}/>
+
 
         {/* Open Graph data */}
         <meta property="og:title" content={NAME}/>
