@@ -86,7 +86,6 @@ export default class Landing extends React.Component {
                 </p>
                 <div className="downloads space10" id="download-top">
                   {downloadButton}
-                  {/* <a href="#"><img src="images/downloads/android.png" alt="android"/></a> */}
                 </div>
                 <p className="space40 homeAndroid" id="android">
                   <a>
@@ -102,7 +101,7 @@ export default class Landing extends React.Component {
                     <h4 className="subscription-error"></h4>
                     <div id="androidShare" className="androidShare">
                       <h4 className="textBlue">Share the app to your friends!</h4>
-                      <div id="shareIconsAndroid" className="shareIcons"></div>
+                      <div id="shareIconsAndroid" className={`shareIcons ${styles.shareIconsAndroid}`}></div>
                     </div>
                   </form>
                 </div>

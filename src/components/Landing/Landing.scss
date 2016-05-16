@@ -23,6 +23,13 @@ video {
   transform: translate(-50%, -50%)
 }
 
+.shareIconsAndroid {
+  text-align: center;
+  & :global(.jssocials-share-link) {
+   background-color: #030303;
+  }
+}
+
 .home {
   background: $grayBackground;
   padding: $homePadding 0px;
