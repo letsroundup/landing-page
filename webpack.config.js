@@ -1,4 +1,7 @@
+'use strict';
 /* eslint no-var: 0 */
+const _curry = require('lodash/curry');
+
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -17,6 +20,12 @@ var paths = [
 var lIN = development ? '[name]__[local]' : '[hash:base64]';
 
 var outputPath = path.join(__dirname, 'build');
+
+const makePlugin = _curry((state, name) => `{${name}:${state}}`);
+const truePlugins = [ 'removeTitle', 'removeDesc', 'removeViewBox', 'removeDimensions' ].map(makePlugin('true'));
+const falsePlugins = [].map(makePlugin('false'));
+const pluginList = [].concat(truePlugins, falsePlugins).join(',');
+const svgoOptions = `svgo:{plugins:[${pluginList}]}`;
 
 module.exports = {
   entry: {
@@ -57,7 +66,18 @@ module.exports = {
       { test: /\.(s?css)$/, loader: ExtractTextPlugin.extract(
         'style',
         'css?modules&localIdentName=' + lIN + '!autoprefixer?browsers=last 2 version!sass') },
-      { test: /\.(png|jpg|jpeg|gif|svg|mp4)/, loader: 'file-loader' },
+      {
+        test: /\.(svg)/,
+        loaders: [
+          `file-loader`,
+          `image-webpack?{${svgoOptions}}`,
+        ],
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)/,
+        loader: `file-loader`,
+      },
+      { test: /\.(mp4)/, loader: 'file-loader' },
       { test: /CNAME|LICENSE/, loader: 'file-loader?name=[name]' },
       { test: /\.md/, loader: 'file-loader?name=[name].[ext]' },
     ],
