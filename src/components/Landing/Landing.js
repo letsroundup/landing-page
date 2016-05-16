@@ -43,11 +43,6 @@ export default class Landing extends React.Component {
   render() {
     return (
       <body id="page-top" data-spy="scroll" data-target="#scrollspy-nav">
-        <div className="preloader">
-          <div className={styles.status}>
-              <img src={logoImg} alt="loading..."/>
-          </div>
-        </div>
 
         <header>
           <nav id="scrollspy-nav" className="navbar navbar-custom navbar-top navbar-fixed-top sticky-navigation" >
@@ -88,9 +83,7 @@ export default class Landing extends React.Component {
                   {downloadButton}
                 </div>
                 <p className="space40 homeAndroid" id="android">
-                  <a>
-                    Android user?
-                  </a>
+                  <a>Android user?</a>
                 </p>
                 <div className="waitinglistForm">
                   <p className="space40">Be part of the Android waitlist:</p>
@@ -343,13 +336,13 @@ export default class Landing extends React.Component {
             </div>
           </div>
         </footer>
-        <script src="js/jquery-1.11.3.min.js"/>
-        <script src="js/bootstrap.min.js"/>
-        <script src="js/jquery.easing.min.js"/>
-        <script src="js/jquery.appear.js"/>
-        <script src="js/jquery.inview.js"/>
-        <script src="js/wow.min.js"/>
-        <script src="js/pace.min.js" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"/>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.appear/0.3.3/jquery.appear.min.js"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inview/1.0.0/jquery.inview.min.js"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js" />
         <script src="js/jssocials.min.js"/>
         <script src="js/script.js"/>
       </body>

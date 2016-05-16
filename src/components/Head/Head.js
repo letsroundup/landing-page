@@ -14,7 +14,7 @@ const KEYWORDS = [
 ].join(',');
 
 const commentIE = '<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->';
-const commentIE9 = '<!--[if lt IE 9]><script src="js/html5shiv.js"></script><script src="js/respond.min.js"></script><![endif]-->';
+const commentIE9 = '<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->';
 
 const DESCRIPTION = 'Know what the places you love are offering. Solidify plans with your friends.';
 const SOCIAL_DESCRIPTION = 'Voo helps you and your friends to go to the places you love, for less.';
@@ -74,18 +74,18 @@ export default React.createClass({
         <link rel="apple-touch-icon" href={appleTouchIcon}/>
 
         {/* Stylesheets */}
-        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
         <link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet" type="text/css"/>
-        <link href="css/bootstrap.min.css" rel="stylesheet"/>
-        <link href="css/animate.min.css" rel="stylesheet"/>
+          <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.css" rel="stylesheet"/>
         <link href="css/jssocials.css" rel="stylesheet" type="text/css"/>
         <link href="css/jssocials-theme-custom.css" rel="stylesheet" type="text/css"/>
         <link href="css/style.css" rel="stylesheet"/>
         <link href="/main.css" rel="stylesheet" type="text/css"/>
 
         {/* Scripts */}
-        <script type="text/javascript" src="/analytics.js"/>
-        <script src="js/modernizr.custom.min.js"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"/>
+        <script src="/analytics.js"/>
       </head>
     );
   },
