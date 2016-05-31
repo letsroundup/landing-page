@@ -29,6 +29,9 @@ const falsePlugins = [].map(makePlugin('false'));
 const pluginList = [].concat(truePlugins, falsePlugins).join(',');
 const svgoOptions = `svgo:{plugins:[${pluginList}]}`;
 
+const domain = 'https://tryvoo.com';
+const sitemapName = 'sitemap.xml';
+
 module.exports = {
   entry: {
     main: './src/index.js',
@@ -56,8 +59,8 @@ module.exports = {
     new ExtractTextPlugin('main.[contenthash].css'),
     new webpack.NoErrorsPlugin(),
     new StaticSiteGeneratorPlugin('main', paths, {}),
-    new SitemapPlugin('https://tryvoo.com', paths, 'sitemap.xml'),
-    new WebpackRobots(),
+    new SitemapPlugin(domain, paths, sitemapName),
+    new WebpackRobots({ sitemap: `${domain}/${sitemapName}` }),
     new CopyWebpackPlugin([ {
       context: path.join(__dirname, 'src/thirdparties/js'),
       from: '**/*',
