@@ -37,10 +37,13 @@ const navs = [
 const downloadButton = <a href="https://1pd8.app.link/app-store"><img src={appleDownloadImg} alt="Apple App Store" /></a>;
 
 export default class Landing extends React.Component {
+  static propTypes = {
+    assetsByChunkName: React.PropTypes.object.isRequired,
+  };
+
   render() {
     return (
       <body id="page-top" data-spy="scroll" data-target="#scrollspy-nav">
-
         <header>
           <nav id="scrollspy-nav" className="navbar navbar-custom navbar-top navbar-fixed-top sticky-navigation" >
             <div className="container">
@@ -342,7 +345,7 @@ export default class Landing extends React.Component {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js" />
         <script src="/jssocials.min.js"/>
-        <script src="/landing.js"/>
+        <script src={`/${this.props.assetsByChunkName.landing}`}/>
       </body>
     );
   }

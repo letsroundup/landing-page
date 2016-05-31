@@ -4,6 +4,6 @@ import Legal from '../Legal';
 
 import * as props from './PrivacySectionsContent';
 
-export default () => (
-  <Legal {...props}/>
+export default ({ assetsByChunkName }) => (
+  <Legal {...props} assetsByChunkName={assetsByChunkName} />
 );

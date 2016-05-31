@@ -1,25 +1,25 @@
 'use strict';
-/* eslint no-var: 0 */
+/* eslint no-const: 0 */
 const _curry = require('lodash/curry');
+const path = require('path');
 
-var path = require('path');
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-var environment = process.env.NODE_ENV || 'development';
-var development = environment === 'development';
+const environment = process.env.NODE_ENV || 'development';
+const development = environment === 'development';
 
-var paths = [
+const paths = [
   '/',
   '/privacy',
   '/tos',
 ];
 
-var lIN = development ? '[name]__[local]' : '[hash:base64]';
+const lIN = development ? '[name]__[local]' : '[hash:base64]';
 
-var outputPath = path.join(__dirname, 'build');
+const outputPath = path.join(__dirname, 'build');
 
 const makePlugin = _curry((state, name) => `{${name}:${state}}`);
 const truePlugins = [ 'removeTitle', 'removeDesc', 'removeViewBox', 'removeDimensions' ].map(makePlugin('true'));
@@ -35,7 +35,7 @@ module.exports = {
   },
   output: {
     path: outputPath,
-    filename: '[name].js',
+    filename: '[name].[chunkhash].js',
     libraryTarget: 'umd',
     publicPath: '/',
   },
@@ -51,7 +51,7 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify(environment),
       '__DEV__': development,
     }),
-    new ExtractTextPlugin('main.css'),
+    new ExtractTextPlugin('main.[contenthash].css'),
     new webpack.NoErrorsPlugin(),
     new StaticSiteGeneratorPlugin('main', paths, {}),
     new CopyWebpackPlugin([ {

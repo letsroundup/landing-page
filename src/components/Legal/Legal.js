@@ -8,7 +8,9 @@ import styles from './Legal.scss';
 import logoImg from 'images/logo.svg';
 
 export default class Legal extends React.Component {
+
   static propTypes = {
+    assetsByChunkName: React.PropTypes.object.isRequired,
     title: React.PropTypes.string.isRequired,
     order: React.PropTypes.arrayOf(React.PropTypes.string),
     sections: React.PropTypes.objectOf(
@@ -46,7 +48,7 @@ export default class Legal extends React.Component {
             ))}
           </content>
         </div>
-        <script type="text/javascript" src="/legal.js"/>
+        <script src={`/${this.props.assetsByChunkName.legal}`}/>
       </body>
     );
   }

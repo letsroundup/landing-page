@@ -3,14 +3,16 @@ import ReactDOMServer from 'react-dom/server';
 
 import Head from 'components/Head';
 
-const Page = ({ children, title }) => (
+const Page = ({ children, title, assetsByChunkName }) => (
   <html lang="en-us">
-    <Head title={title}/>
+    <Head title={title} assetsByChunkName={assetsByChunkName}/>
     {children}
   </html>
 );
 
-export default ({ title, Component }) =>
+export default ({ title, Component, assetsByChunkName }) =>
   ReactDOMServer.renderToStaticMarkup(
-    <Page title={title}>{<Component/>}</Page>
+    <Page title={title} assetsByChunkName={assetsByChunkName}>
+      <Component assetsByChunkName={assetsByChunkName}/>
+    </Page>
   );

@@ -12,13 +12,14 @@ import 'common/anchor.scss';
 
 // This needs to be an es5 export of the plugin explodes
 module.exports = (locals, callback) => {
+  const assetsByChunkName = locals.webpackStats.toJson().assetsByChunkName;
   switch (locals.path) {
   case '/':
-    return callback(null, render({ Component: Landing }));
+    return callback(null, render({ Component: Landing, assetsByChunkName }));
   case '/privacy':
-    return callback(null, render({ Component: Privacy }));
+    return callback(null, render({ Component: Privacy, assetsByChunkName }));
   case '/tos':
-    return callback(null, render({ Component: TOS }));
+    return callback(null, render({ Component: TOS, assetsByChunkName }));
   default:
     throw new Error(`path ${locals.path} cannot be rendered`);
   }

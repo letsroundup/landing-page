@@ -45,6 +45,7 @@ export default React.createClass({
 
   propTypes: {
     title: React.PropTypes.string.isRequired,
+    assetsByChunkName: React.PropTypes.object.isRequired,
   },
 
   getDefaultProps() {
@@ -52,6 +53,11 @@ export default React.createClass({
   },
 
   render() {
+    let cssTag = null;
+    const main = this.props.assetsByChunkName.main;
+    if (Array.isArray(main) && main.length > 1) {
+      cssTag = <link href={`/${main[1]}`} rel="stylesheet" type="text/css"/>;
+    }
     return (
       <head>
         <meta charSet="UTF-8"/>
@@ -98,7 +104,7 @@ export default React.createClass({
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet" type="text/css"/>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.css" rel="stylesheet"/>
-        <link href="/main.css" rel="stylesheet" type="text/css"/>
+        {cssTag}
 
         {/* Scripts */}
         <script dangerouslySetInnerHTML={{ __html: analytics }}/>
