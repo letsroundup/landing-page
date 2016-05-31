@@ -6,6 +6,12 @@ if (!__DEV__) {
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   window.ga('create', 'UA-76811752-1', 'auto');
 } else {
-  window.ga = (...args) => console.debug('ANALYTICS:', ...args);
+  window.ga = function ga() {
+    var _console;
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+    return (_console = console).debug.apply(_console, ['ANALYTICS:'].concat(args));
+  };
 }
 

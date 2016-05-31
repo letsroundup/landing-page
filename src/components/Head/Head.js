@@ -20,6 +20,26 @@ const DESCRIPTION = 'Know what the places you love are offering. Solidify plans 
 const SOCIAL_DESCRIPTION = 'Voo helps you and your friends go to the places you love, for less.';
 const NAME = 'Voo';
 
+let analytics;
+/* eslint-disable */
+if (!__DEV__) {
+  const GOOGLE_TOKEN = 'UA-76811752-1';
+  analytics = `(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+window.ga('create', '${GOOGLE_TOKEN}', 'auto');`
+} else {
+  analytics = `window.ga = function ga() {
+  var _console;
+  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+  return (_console = console).debug.apply(_console, ['ANALYTICS:'].concat(args));
+};`
+}
+/* eslint-enable */
+
 export default React.createClass({
   displayName: 'Head',
 
@@ -35,7 +55,7 @@ export default React.createClass({
     return (
       <head>
         <meta charSet="UTF-8"/>
-        <title>{this.props.title}</title>
+        <title>{this.props.title} {__DEV__ ? 'DEV' : 'PROD'}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
         <meta name="description" content={DESCRIPTION}/>
         <meta name="keywords" content={KEYWORDS}/>
@@ -84,8 +104,7 @@ export default React.createClass({
         <link href="/main.css" rel="stylesheet" type="text/css"/>
 
         {/* Scripts */}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"/>
-        <script src="/analytics.js"/>
+        <script dangerouslySetInnerHTML={{ __html: analytics }}/>
       </head>
     );
   },

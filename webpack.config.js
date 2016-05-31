@@ -31,7 +31,6 @@ module.exports = {
   entry: {
     main: './src/index.js',
     // landing: './src/static/landing.js',
-    analytics: './src/static/analytics.js',
     legal: './src/static/legal.js',
   },
   output: {
