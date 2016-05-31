@@ -1,5 +1,11 @@
 import React from 'react';
 
+import Video from './Video';
+
+import 'thirdparties/css/jssocials.css';
+import 'thirdparties/css/jssocials-theme-custom.css';
+import 'thirdparties/css/style.css';
+
 import styles from './Landing.scss';
 
 import logoImg from 'images/logo.svg';
@@ -29,15 +35,6 @@ const navs = [
 ];
 
 const downloadButton = <a href="https://1pd8.app.link/app-store"><img src={appleDownloadImg} alt="Apple App Store" /></a>;
-
-const Video = ({ src, alt, className, slate }) => (
-  <video autoPlay loop muted className={className} alt={alt} poster={slate}>
-    <source src={src} type="video/mp4" />
-    Sorry, your browser doesn't support embedded videos,
-    but don't worry, you can <a href={src}>download it</a>
-    and watch it with your favorite video player!
-  </video>
-);
 
 export default class Landing extends React.Component {
   render() {
@@ -344,8 +341,8 @@ export default class Landing extends React.Component {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inview/1.0.0/jquery.inview.min.js"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js" />
-        <script src="js/jssocials.min.js"/>
-        <script src="js/script.js"/>
+        <script src="/jssocials.min.js"/>
+        <script src="/landing.js"/>
       </body>
     );
   }

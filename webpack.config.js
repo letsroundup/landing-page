@@ -30,7 +30,7 @@ const svgoOptions = `svgo:{plugins:[${pluginList}]}`;
 module.exports = {
   entry: {
     main: './src/index.js',
-    // landing: './src/static/landing.js',
+    landing: './src/static/landing.js',
     legal: './src/static/legal.js',
   },
   output: {
@@ -55,16 +55,29 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new StaticSiteGeneratorPlugin('main', paths, {}),
     new CopyWebpackPlugin([ {
-      context: path.join(__dirname, 'src/thirdparties/'),
+      context: path.join(__dirname, 'src/thirdparties/js'),
       from: '**/*',
     } ]),
   ],
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
-      { test: /\.(s?css)$/, loader: ExtractTextPlugin.extract(
-        'style',
-        'css?modules&localIdentName=' + lIN + '!autoprefixer?browsers=last 2 version!sass') },
+      {
+        test: /.(css)$/,
+        loader: ExtractTextPlugin.extract(
+          'style',
+          'css'
+        ),
+        include: /thirdparties/,
+      },
+      {
+        test: /\.(s?css)$/,
+        loader: ExtractTextPlugin.extract(
+          'style',
+          'css?modules&localIdentName=' + lIN + '!autoprefixer?browsers=last 2 version!sass'
+        ),
+        exclude: /thirdparties/,
+      },
       {
         test: /\.(svg)/,
         loaders: [

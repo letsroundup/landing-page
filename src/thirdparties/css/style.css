@@ -6,20 +6,6 @@ html {
     max-width: 100%;
 }
 
-/* PRE LOADER */
-.preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #fefefe;
-    z-index: 9999;
-    height: 100%;
-    width: 100%;
-    overflow: hidden !important;
-}
-
 /* top line LOADER */
 .pace {
     -webkit-pointer-events: none;

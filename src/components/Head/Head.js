@@ -55,7 +55,7 @@ export default React.createClass({
     return (
       <head>
         <meta charSet="UTF-8"/>
-        <title>{this.props.title} {__DEV__ ? 'DEV' : 'PROD'}</title>
+        <title>{this.props.title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
         <meta name="description" content={DESCRIPTION}/>
         <meta name="keywords" content={KEYWORDS}/>
@@ -98,9 +98,6 @@ export default React.createClass({
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet" type="text/css"/>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.css" rel="stylesheet"/>
-        <link href="css/jssocials.css" rel="stylesheet" type="text/css"/>
-        <link href="css/jssocials-theme-custom.css" rel="stylesheet" type="text/css"/>
-        <link href="css/style.css" rel="stylesheet"/>
         <link href="/main.css" rel="stylesheet" type="text/css"/>
 
         {/* Scripts */}
