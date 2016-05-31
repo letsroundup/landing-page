@@ -6,6 +6,8 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
+const WebpackRobots = require('@tanepiper/webpack-robotstxt');
+const SitemapPlugin = require('sitemap-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const environment = process.env.NODE_ENV || 'development';
@@ -54,6 +56,8 @@ module.exports = {
     new ExtractTextPlugin('main.[contenthash].css'),
     new webpack.NoErrorsPlugin(),
     new StaticSiteGeneratorPlugin('main', paths, {}),
+    new SitemapPlugin('https://tryvoo.com', paths, 'sitemap.xml'),
+    new WebpackRobots(),
     new CopyWebpackPlugin([ {
       context: path.join(__dirname, 'src/thirdparties/js'),
       from: '**/*',
