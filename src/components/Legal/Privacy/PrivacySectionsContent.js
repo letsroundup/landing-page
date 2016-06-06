@@ -96,7 +96,7 @@ export const sections = {
         Some of the cookies used by the App are set by us, and some are set by third parties who are delivering services on our behalf, including but not limited to Google, Localytics, Twilio, OpenTable, Groupon, Uber and Mogl.
       </p>,
       <p>
-        Most web browsers automatically accept cookies but, if you prefer, you can change your browser to prevent that or to notify you each time a cookie is set. You can also learn more about cookies by visiting <a href="www.allaboutcookies.org">www.allaboutcookies.org</a> which includes additional useful information on cookies and how to block cookies using different types of browser. Please note, however, that by blocking or deleting cookies used on the App, you may not be able to take full advantage of the App.
+        Most web browsers automatically accept cookies but, if you prefer, you can change your browser to prevent that or to notify you each time a cookie is set. You can also learn more about cookies by visiting <a href="http://www.allaboutcookies.org">www.allaboutcookies.org</a> which includes additional useful information on cookies and how to block cookies using different types of browser. Please note, however, that by blocking or deleting cookies used on the App, you may not be able to take full advantage of the App.
       </p>,
       <p>
         Our cookies
