@@ -49,7 +49,7 @@ export default React.createClass({
   },
 
   getDefaultProps() {
-    return { title: 'Try Voo' };
+    return { title: 'Voo - Find happy hours at your favourite bars and restaurants' };
   },
 
   render() {
@@ -90,7 +90,7 @@ export default React.createClass({
         {/* Open Graph data */}
         <meta property="og:title" content={NAME}/>
         <meta property="og:type" content="website"/>
-        <meta property="og:url" content="http://www.tryvoo.com"/>
+        <meta property="og:url" content="https://tryvoo.com"/>
         <meta property="og:image" content={logoImg}/>
         <meta property="og:description" content={SOCIAL_DESCRIPTION}/>
         <meta property="og:site_name" content={NAME}/>
