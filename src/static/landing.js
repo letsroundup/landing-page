@@ -1,4 +1,4 @@
-/* global WOW jQuery */
+/* global WOW __API_URL__ jQuery */
 const $document = jQuery(document);
 $document.ready($ => {
   const wow = new WOW({ mobile: false });
@@ -167,13 +167,14 @@ $document.on('submit', '#contactForm', function onContactSubmit(e) {
   const name = jQuery('#name').val();
   const email = jQuery('#email').val();
   const message = jQuery('#message').val();
+  const url = __API_URL__ + '/feedback';
 
   if (isValidEmail(email) && (message.length > 1) && (name.length > 1)) {
     window.ga('send', 'event', 'click', 'send-feedback');
     jQuery.ajax({
       type: 'POST',
       contentType: 'application/json; charset=utf-8',
-      url: 'https://api.letsroundup.com/feedback',
+      url: url,
       data: JSON.stringify({
         name: name,
         email: email,
@@ -255,6 +256,49 @@ $document.on('submit', '#waitlisted', function onWaitlistSubmit(e) {
     });
   } else {
     showErrorMessage('The email is not valid.');
+  }
+  return false;
+});
+
+// Text me the app Form
+$document.on('submit', '#text-app', function onTextMeTheAppSubmit(e) {
+  e.preventDefault();
+  const phoneNumber = jQuery('#download-phoneNumber').val();
+  const url = __API_URL__ + '/textapp';
+
+  function onSuccess(message) {
+    jQuery('.download-success').html('<i class="icon_close_alt2"></i><br/>' + message).fadeIn(1000);
+    jQuery('.download-error').hide();
+  }
+
+  function onError(message) {
+    jQuery('.download-error').html('<i class="icon_close_alt2"></i><br/>' + message).fadeIn(1000);
+    jQuery('.download-success').hide();
+  }
+
+  if (phoneNumber) {
+    window.ga('send', 'event', 'click', 'download', 'text');
+    jQuery.ajax({
+      type: 'POST',
+      contentType: 'application/json; charset=utf-8',
+      url: url,
+      data: JSON.stringify({
+        phoneNumber: phoneNumber,
+      }),
+      success: (res) => {
+        const message = 'Done. You should receive the link in the next minute.';
+        onSuccess(message);
+      },
+      error: (res) => {
+        if (res && res.responseJSON.error.indexOf('prop phoneNumber parse failed') > -1) {
+          onError('The phone number is not valid.');
+        } else {
+          onError('Something went wrong. Try again later.');
+        }
+      },
+    });
+  } else {
+    onError('The phone number is not valid.');
   }
   return false;
 });
