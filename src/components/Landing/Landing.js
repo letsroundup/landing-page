@@ -77,9 +77,12 @@ export default class Landing extends React.Component {
                 <h1>The <span className="bold">places </span>you follow.<br/> The <span className="bold">people </span>you care about.</h1>
 
                 <p className="space40">
-                  <a id="download-top" href="https://1pd8.app.link/app-store">Download Voo</a> to get on the waitlist for our private release
+                  <a href="https://1pd8.app.link/app-store">Download Voo</a> to get on the waitlist for our private release
                 </p>
-                <div className="space40" id="download-text">
+                <div className="downloads visible-xs-block space40" id="download-top">
+                  {downloadButton}
+                </div>
+                <div className="space40 hidden-xs" id="download-text">
                   <p className="space20">Text me the download link:</p>
                   <form id="text-app" className="download-form form-inline" >
                     <input type="text" name="phoneNumber" id="download-phoneNumber" placeholder="Phone Number" className="form-control input-box"/>
