@@ -355,7 +355,8 @@ h6{
     margin-top: 210px;
     line-height: 60px;
 }
-.subscription-form .input-box {
+.subscription-form .input-box,
+.download-form .input-box {
     width: 320px;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -371,7 +372,9 @@ h6{
 }
 
 .subscription-form .subscription-success,
-.subscription-form .subscription-error {
+.subscription-form .subscription-error,
+.download-form .download-success,
+.download-form .download-error {
     display: none;
     font-weight: 300;
 }
@@ -525,7 +528,8 @@ footer p a,footer p a:hover,footer p a:focus {
     h1{
         font-size: 30px;
     }
-    .subscription-form .input-box {
+    .subscription-form .input-box,
+    .download-form .input-box {
         margin: 0px auto 20px;
         width: 80%;
     }

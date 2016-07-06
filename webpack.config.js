@@ -54,6 +54,7 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(environment),
+      '__API_URL__': JSON.stringify(development ? '/api' : 'https://api.letsroundup.com'),
       '__DEV__': development,
     }),
     new ExtractTextPlugin('main.[contenthash].css'),
@@ -101,5 +102,22 @@ module.exports = {
       { test: /\.md/, loader: 'file-loader?name=[name].[ext]' },
     ],
   },
-  devServer: { outputPath, host: '0.0.0.0' },
+  devServer: {
+    outputPath,
+    host: '0.0.0.0',
+    proxy: {
+      '/api/*': {
+        'target': {
+          'host': 'localhost',
+          'protocol': 'http:',
+          'port': 3001,
+        },
+        rewrite: (req) => {
+          req.url = req.url.replace(/^\/api/, '');
+        },
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
 };

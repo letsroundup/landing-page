@@ -148,3 +148,33 @@ video {
   }
 
 }
+
+.btnBlue {
+    max-width: 250px;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1;
+    -webkit-backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    background: #108EFF;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    transition: all .3s ease;
+    letter-spacing: 1px;
+    cursor: pointer;
+    line-height: 1.42857;
+    text-align: center;
+    white-space: nowrap;
+    border: none;
+}
+
+.btnBlue:hover, .btnBlue:focus {
+    background: #1172C8;
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+}
