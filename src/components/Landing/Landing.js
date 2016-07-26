@@ -75,11 +75,7 @@ export default class Landing extends React.Component {
               />
               <div className="col-md-6 col-md-offset-6">
                 <h1>The <span className="bold">places </span>you follow.<br/> The <span className="bold">people </span>you care about.</h1>
-
-                <p className="space40">
-                  <a href="https://1pd8.app.link/app-store">Download Voo</a> to get on the waitlist for our private release
-                </p>
-                <div className="downloads visible-xs-block space40" id="download-top">
+                <div className="downloads space20" id="download-top">
                   {downloadButton}
                 </div>
                 <div className="space40 hidden-xs" id="download-text">
@@ -158,6 +154,9 @@ export default class Landing extends React.Component {
                 <h2>Your favorite<span className="bold"> places</span>.<br/>Now <span className="bold">affordable.</span></h2>
                 <p className="space40">
                   Follow the places you and your friends love going to. Plan a <b>rendez-Voo</b> and if there’s spare capacity, they’ll lower the price and get you there for less.
+                </p>
+                <p className="space40 deals">
+                  * Deals are currently available in San Francisco only.
                 </p>
                 <br/>
               </div>

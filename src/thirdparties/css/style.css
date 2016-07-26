@@ -392,6 +392,10 @@ h6{
     color: #26B7FF;
 }
 
+.deals {
+  font-size: 12px;
+}
+
 /* contact ----------------------------------------------------------- */
 .section.contact {
     background: #F4F4F4;
