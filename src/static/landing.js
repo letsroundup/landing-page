@@ -210,50 +210,10 @@ $document.on('submit', '#waitlisted', function onWaitlistSubmit(e) {
     jQuery('.subscription-success').hide();
   }
 
-  function getPositon() {
-    jQuery.ajax({
-      type: 'GET',
-      contentType: 'application/json; charset=utf-8',
-      url: `https://voo-android.app.waitlisted.co/api/v1/reservation?email=${email}`,
-      success: function onSuccess(res) {
-        const position = res && res.reservation && parseInt(res.reservation.position, 10);
-        let message = 'Already added. We\'ll email you when the Android app is available.';
-        if (position && position > minPosition) {
-          message = `Already added. You're at position <b class="textBlue">${position}</b>.`;
-        }
-        showSuccessMessage(message);
-      },
-      error: function onError(res) {
-        showErrorMessage('Something went wrong. Try again later.');
-      },
-    });
-  }
-
   if (isValidEmail(email)) {
     window.ga('send', 'event', 'click', 'waitlist');
-    jQuery.ajax({
-      type: 'POST',
-      contentType: 'application/json; charset=utf-8',
-      url: 'https://voo-android.app.waitlisted.co/api/v1/reservation',
-      data: JSON.stringify({
-        email: email,
-      }),
-      success: function onSuccess(res) {
-        const position = res && res.reservation && parseInt(res.reservation.position, 10);
-        let message = 'Thanks! We\'ll email you when the Android app is available.';
-        if (position && position > minPosition) {
-          message = `Thanks! You're at position <b class="textBlue">${position}</b>. We'll email you when the Android app is available.`;
-        }
-        showSuccessMessage(message);
-      },
-      error: function onError(res) {
-        if (res && res.responseText.indexOf('has already been taken') > -1) {
-          getPositon();
-        } else {
-          showErrorMessage('Something went wrong. Try again later.');
-        }
-      },
-    });
+    const message = 'Thanks! We\'ll email you when the Android app is available.';
+    showSuccessMessage(message);
   } else {
     showErrorMessage('The email is not valid.');
   }
